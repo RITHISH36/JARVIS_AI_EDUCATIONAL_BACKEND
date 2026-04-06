@@ -237,3 +237,4 @@ async function check(req, res) {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+console.log("new version")
