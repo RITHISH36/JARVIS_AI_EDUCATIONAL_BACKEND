@@ -14,7 +14,7 @@ const Aidata = require("./models/Airesponse")
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
-   origin:"http://localhost:5173",
+   origin:"https://jarvis-ai-educational-ai.vercel.app",
    credentials:true
 }));
 const passport = require("passport");
@@ -50,7 +50,7 @@ async function JwtTokenGenerator(req, res) {
          secure:false,
          sameSite:"Lax"
         })
-        res.redirect("http://localhost:5173/ChatPage")
+        res.redirect("https://jarvis-ai-educational-ai.vercel.app/ChatPage")
    }
    catch (err) {
       res.status(400).json(err)
