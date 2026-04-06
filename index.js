@@ -48,7 +48,7 @@ async function JwtTokenGenerator(req, res) {
         res.cookie("token",token,{
          httpOnly:true,
          secure:false,
-         sameSite:"Lax"
+         sameSite:"None"
         })
         res.redirect("https://jarvis-ai-educational-ai.vercel.app/ChatPage")
    }
@@ -235,4 +235,4 @@ async function check(req, res) {
    }
 }
 
-app.listen(3000, () => { console.log("server started") })
+app.listen(3000, () => { console.log("server started 3000") })
