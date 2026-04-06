@@ -10,7 +10,8 @@ const Auth=()=>{
             {
                 clientID:process.env.GOOGLE_CLIENT_ID,
                 clientSecret:process.env.GOOGLE_CLIENT_SECRECT,
-                callbackURL:"https://jarvis-ai-educational-backend.onrender.com/auth/google"
+                callbackURL:"https://jarvis-ai-educational-backend.onrender.com/auth/google",
+                proxy:true
             },
             async (accessToken,refreshToken,profile,done) =>{
                 try{
