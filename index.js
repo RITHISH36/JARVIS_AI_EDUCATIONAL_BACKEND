@@ -235,4 +235,5 @@ async function check(req, res) {
    }
 }
 
-app.listen(3000, () => { console.log("server started 3000") })
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
