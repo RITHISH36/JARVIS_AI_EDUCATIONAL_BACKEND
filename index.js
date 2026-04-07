@@ -47,7 +47,7 @@ async function JwtTokenGenerator(req, res) {
          { expiresIn: "1d" })
         res.cookie("token",token,{
          httpOnly:true,
-         secure:false,
+         secure:true,
          sameSite:"None"
         })
         res.redirect("https://jarvis-ai-educational-ai.vercel.app/ChatPage")

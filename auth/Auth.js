@@ -4,7 +4,7 @@ const GoogleStaretgy=require("passport-google-oauth20").Strategy
 const mongoose=require("mongoose");
 const User = require("../models/User");
 const Auth=()=>{
-
+console.log("GOOGLE CALLBACK:", "https://jarvis-ai-educational-backend.onrender.com/auth/google/callback");
     passport.use(
         new GoogleStaretgy(
             {
@@ -31,6 +31,7 @@ const Auth=()=>{
                 catch (err){
                        done(err,null);
                 }
+                
             }
         )
     );
