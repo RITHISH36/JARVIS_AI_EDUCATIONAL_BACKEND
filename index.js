@@ -79,23 +79,36 @@ async function AiResponse(req, res) {
 
 
 
+
 // Get user Data (Api)
-app.get('/Getuserdata', Jwt_Verification, Getuserdata)
+app.get('/Getuserdata',Jwt_Verification,  Getuserdata)
 async function Getuserdata(req, res) {
    try {
       const UserId = req.user.id
-      const getall = await Aidata.find({ User: UserId }).populate("User")
+      const getall = await Aidata.find({ User: UserId }).populate("User");
+      
       if (!getall) {
          throw new Error("no data")
       }
       res.status(200).json(getall)
    }
    catch (err) {
-      console.log("This is data by use ", err)
+      console.log("Error in data Fetch", err)
    }
 
 }
-
+app.get('/GetuserProfile',Jwt_Verification,GetuserProfile)
+async function GetuserProfile(req,res) {
+   try{
+      const UserId = req.user.id
+      const Userprofile = await User.find({_id:UserId});
+      console.log(Userprofile);
+      res.status(200).json(Userprofile)
+   }
+   catch(err){
+        res.status(404).json("404 not Found Data");
+   }
+}
 
 
 // Pdf Extract and Pdf Input (Api)
